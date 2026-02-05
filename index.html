@@ -2,994 +2,1007 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>منزل Homes | الرفاهية في كل تفصيل</title>
-    <meta name="description" content="منزل Homes - وجهتك الأولى للعقارات الفاخرة. اكتشف منازل الأحلام في أرقى المواقع حول العالم.">
+    <meta name="description" content="منزل Homes - وجهتك الأولى للعقارات الفاخرة.">
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&family=Noto+Kufi+Arabic:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <linkcdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&family=Noto+Kufi+Arabic:wght@300;500;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         /* ========================
-        Variables & Global Reset
-        ========================
-        */
+           Variables & Setup
+           ======================== */
         :root {
-            --primary-color: #1a3c34; /* زمردي داكن */
-            --secondary-color: #c5a47e; /* ذهبي فاخر */
-            --text-dark: #2c2c2c;
-            --text-light: #f8f9fa;
-            --bg-light: #f4f7f6;
-            --bg-white: #ffffff;
-            --font-en-heading: 'Cinzel', serif;
-            --font-en-body: 'Montserrat', sans-serif;
+            --primary: #0f2823; /* أخضر غامق جداً */
+            --primary-light: #1a3c34;
+            --gold: #c5a47e;
+            --gold-light: #e0c8a8;
+            --text-main: #2c2c2c;
+            --text-muted: #666;
+            --white: #ffffff;
+            --off-white: #f9f9f9;
+            
+            --font-head: 'Cinzel', serif;
+            --font-body: 'Montserrat', sans-serif;
             --font-ar: 'Noto Kufi Arabic', sans-serif;
-            --transition: all 0.3s ease;
+            
+            --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+            --shadow-lg: 0 20px 40px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         html {
             scroll-behavior: smooth;
+            font-size: 16px;
         }
 
         body {
             font-family: var(--font-ar);
-            color: var(--text-dark);
-            line-height: 1.6;
+            background-color: var(--off-white);
+            color: var(--text-main);
             overflow-x: hidden;
-            background-color: var(--bg-white);
+            line-height: 1.7;
         }
 
-        /* تعديل الخطوط بناء على اللغة */
-        html[lang="en"] body {
-            font-family: var(--font-en-body);
-        }
-        html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 {
-            font-family: var(--font-en-heading);
-        }
+        /* Typography Override for English */
+        html[lang="en"] body { font-family: var(--font-body); }
+        html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 { font-family: var(--font-head); }
 
-        h1, h2, h3, h4 {
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-padding {
-            padding: 100px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--secondary-color);
-        }
-
-        .section-header p {
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            border: 2px solid var(--primary-color);
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .btn:hover {
-            background-color: transparent;
-            color: var(--primary-color);
-        }
-
-        .btn-gold {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-        }
-
-        .btn-gold:hover {
-            background-color: transparent;
-            color: var(--secondary-color);
-        }
+        h1, h2, h3, h4 { line-height: 1.3; color: var(--primary); }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
 
         /* ========================
-        Header & Navigation
-        ========================
-        */
-        #header {
+           Utility Classes & Animations
+           ======================== */
+        .container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-padding { padding: 80px 0; }
+        
+        .text-center { text-align: center; }
+        .text-gold { color: var(--gold); }
+
+        /* Reveal on Scroll Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: linear-gradient(45deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 20px rgba(26, 60, 52, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, var(--gold), var(--gold-light));
+            z-index: -1;
+            transition: transform 0.5s ease;
+            transform: scaleX(0);
+            transform-origin: right;
+        }
+        
+        html[dir="ltr"] .btn::before { transform-origin: left; }
+
+        .btn:hover::before { transform: scaleX(1); }
+        .btn:hover { color: var(--primary); box-shadow: 0 10px 25px rgba(197, 164, 126, 0.4); }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            box-shadow: none;
+        }
+        .btn-outline:hover { background: var(--gold); color: var(--white); }
+
+        /* ========================
+           Navbar (Glassmorphism)
+           ======================== */
+        .navbar {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
+            top: 0; left: 0; width: 100%;
             padding: 20px 0;
+            z-index: 1000;
             transition: var(--transition);
-            background: rgba(26, 60, 52, 0.9); /* شفافية داكنة */
+            background: rgba(255, 255, 255, 0); /* Transparent start */
         }
 
-        #header.scrolled {
-            background: var(--primary-color);
+        .navbar.scrolled {
             padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
         }
 
-        .nav-container {
+        .nav-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--secondary-color) !important;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--white);
             display: flex;
             align-items: center;
+            gap: 10px;
+            z-index: 1002;
         }
+        
+        .navbar.scrolled .logo { color: var(--primary); }
 
-        .logo i {
-            margin-inline-end: 10px;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav-item {
-            margin-inline-start: 30px;
-        }
-
+        /* Desktop Menu */
+        .nav-links { display: flex; align-items: center; gap: 30px; }
+        
         .nav-link {
-            color: var(--text-light);
-            font-weight: 600;
-            font-size: 1.1rem;
+            color: var(--white);
+            font-weight: 500;
             position: relative;
+            font-size: 1rem;
         }
+        
+        .navbar.scrolled .nav-link { color: var(--text-main); }
 
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--secondary-color);
-            transition: var(--transition);
+            bottom: -5px; right: 0; width: 0; height: 2px;
+            background: var(--gold);
+            transition: 0.3s;
         }
+        .nav-link:hover::after { width: 100%; }
+        html[dir="ltr"] .nav-link::after { right: auto; left: 0; }
 
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .lang-switch {
-            background: transparent;
-            border: 1px solid var(--secondary-color);
-            color: var(--secondary-color);
-            padding: 8px 15px;
-            margin-inline-start: 30px;
+        .lang-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.4);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
             cursor: pointer;
             font-family: inherit;
-            font-weight: 600;
-            transition: var(--transition);
+            transition: 0.3s;
         }
-
-        .lang-switch:hover {
-            background: var(--secondary-color);
-            color: var(--primary-color);
+        .navbar.scrolled .lang-btn {
+            border-color: var(--primary);
+            color: var(--primary);
         }
+        .lang-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--white) !important; }
 
-        /* Mobile Nav Toggle */
-        .nav-toggle {
+        /* Mobile Toggle */
+        .menu-toggle {
             display: none;
-            color: var(--text-light);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            color: var(--white);
             cursor: pointer;
+            z-index: 1002;
         }
+        .navbar.scrolled .menu-toggle { color: var(--primary); }
 
         /* ========================
-        Hero Section
-        ========================
-        */
-        #hero {
-            height: 100vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.ibb.co/23KFWDfR/image.avif'); /* الصورة الرئيسية المطلوبة */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+           Mobile Menu (Full Screen Overlay)
+           ======================== */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100vh;
+            background: var(--primary);
+            z-index: 1001;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-overlay ul {
             text-align: center;
-            color: var(--text-light);
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
+        .mobile-menu-overlay li {
+            margin: 25px 0;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: 0.5s ease;
         }
 
-        .hero-content p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
-        }
-
-        /* ========================
-        About Section
-        ========================
-        */
-        #about {
-            background-color: var(--bg-white);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2rem;
-            margin-bottom: 25px;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            color: #555;
-        }
-
-        .about-image {
-            position: relative;
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100%;
-            height: 100%;
-            border: 3px solid var(--secondary-color);
-            z-index: 0;
-        }
-
-        .about-image img {
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        /* RTL Adjustment for About Image Border */
-        html[dir="rtl"] .about-image::before {
-            left: auto;
-            right: -20px;
-        }
-
-        /* ========================
-        Portfolio Section (Properties & Locations)
-        ========================
-        */
-        #portfolio {
-            background-color: var(--bg-light);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .portfolio-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 4px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            height: 300px;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(to top, rgba(26, 60, 52, 0.9), transparent);
-            padding: 20px;
-            color: var(--text-light);
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
+        .mobile-menu-overlay.active li {
             transform: translateY(0);
+            opacity: 1;
         }
+        /* Staggered animation for list items */
+        .mobile-menu-overlay.active li:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu-overlay.active li:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-menu-overlay.active li:nth-child(3) { transition-delay: 0.3s; }
+        .mobile-menu-overlay.active li:nth-child(4) { transition-delay: 0.4s; }
+        .mobile-menu-overlay.active li:nth-child(5) { transition-delay: 0.5s; }
 
-        .portfolio-overlay h3 {
-            color: var(--secondary-color);
-            margin-bottom: 5px;
-            font-size: 1.4rem;
-        }
-
-        /* ========================
-        Insights Section (Advice & Blog)
-        ========================
-        */
-        #insights {
-            background-color: var(--bg-white);
-        }
-
-        .insights-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .insight-card {
-            background: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: var(--transition);
-        }
-
-        .insight-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .insight-img {
-            height: 220px;
-            overflow: hidden;
-        }
-
-        .insight-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .insight-card:hover .insight-img img {
-            transform: scale(1.1);
-        }
-
-        .insight-content {
-            padding: 25px;
-        }
-
-        .insight-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-
-        .insight-content p {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        .read-more {
-            color: var(--secondary-color);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-        }
-
-        .read-more i {
-            margin-inline-start: 8px;
-            transition: var(--transition);
-        }
-
-        .read-more:hover i {
-            transform: translateX(5px);
-        }
-        html[dir="rtl"] .read-more:hover i {
-            transform: translateX(-5px);
-        }
-
-        /* ========================
-        Contact Section
-        ========================
-        */
-        #contact {
-            background-color: var(--primary-color);
-            color: var(--text-light);
-        }
-
-        .contact-header h2 {
-            color: var(--secondary-color);
+        .mobile-menu-overlay a {
+            font-size: 1.5rem;
+            color: var(--white);
+            font-weight: 700;
         }
         
-        .contact-header p {
-            color: rgba(255,255,255,0.8);
+        .mobile-menu-overlay a:hover { color: var(--gold); }
+
+        /* ========================
+           Hero Section
+           ======================== */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            background: linear-gradient(rgba(15, 40, 35, 0.4), rgba(15, 40, 35, 0.7)),
+                        url('https://i.ibb.co/23KFWDfR/image.avif') no-repeat center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
         }
 
-        .contact-container {
+        .hero-content {
+            max-width: 800px;
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            color: var(--white);
+            margin-bottom: 20px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Scroll Down Indicator */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translate(-50%, 0);}
+            40% {transform: translate(-50%, -10px);}
+            60% {transform: translate(-50%, -5px);}
+        }
+
+        /* ========================
+           Features / Stats
+           ======================== */
+        .stats-section {
+            background: var(--primary);
+            color: var(--white);
+            padding: 50px 0;
+            margin-top: -5px; /* Cover any gap */
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .stat-item h3 { font-size: 2.5rem; color: var(--gold); margin-bottom: 5px; }
+        .stat-item p { font-size: 0.9rem; opacity: 0.8; }
+
+        /* ========================
+           About Section
+           ======================== */
+        .about-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-img {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+        
+        .about-img:hover img { transform: scale(1.05); }
+
+        .section-header { margin-bottom: 40px; }
+        .sub-title {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 15px; }
+
+        /* ========================
+           Portfolio (Cards)
+           ======================== */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .property-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            position: relative;
+            group: 'card';
+        }
+
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-img-holder {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img-holder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .property-card:hover .card-img-holder img { transform: scale(1.1); }
+
+        .price-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px; /* Arabic RTL aware via logic below or just left */
+            background: rgba(255,255,255,0.9);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        html[dir="rtl"] .price-tag { left: auto; right: 20px; }
+
+        .card-details { padding: 25px; }
+        .card-details h3 { font-size: 1.4rem; margin-bottom: 8px; }
+        .location { color: var(--text-muted); font-size: 0.9rem; display: flex; align-items: center; gap: 5px; margin-bottom: 15px; }
+        
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .meta-item i { color: var(--gold); margin-inline-end: 5px; }
+
+        /* ========================
+           Services / Insights
+           ======================== */
+        .services-bg {
+            background-color: var(--white);
+            position: relative;
+        }
+        
+        .service-card {
+            padding: 30px;
+            background: var(--off-white);
+            border: 1px solid rgba(0,0,0,0.03);
+            border-radius: var(--radius);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            background: rgba(197, 164, 126, 0.15);
+            color: var(--primary);
+            border-radius: 50%;
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .icon-box { background: var(--primary); color: var(--gold); }
+
+        /* ========================
+           Contact
+           ======================== */
+        .contact-section {
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(135deg, var(--primary) 0%, #0b1e1a 100%);
+            color: var(--white);
+        }
+
+        .contact-wrapper {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
             gap: 50px;
         }
 
-        .contact-info {
+        .contact-content { flex: 1; min-width: 300px; }
+        .contact-form-box {
             flex: 1;
             min-width: 300px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 30px;
-        }
-
-        .info-item i {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-inline-end: 20px;
-        }
-
-        .info-item h4 {
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-
-        .contact-form {
-            flex: 1.5;
-            min-width: 350px;
             background: rgba(255,255,255,0.05);
             padding: 40px;
-            border-radius: 8px;
+            border-radius: var(--radius);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
         }
 
-        .form-group {
-            margin-bottom: 20px;
+        .info-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-inline-end: 20px;
+            flex-shrink: 0;
         }
 
-        .form-control {
+        .input-group { margin-bottom: 20px; }
+        .input-field {
             width: 100%;
             padding: 15px;
             background: rgba(255,255,255,0.1);
             border: 1px solid rgba(255,255,255,0.2);
-            color: var(--text-light);
-            border-radius: 4px;
+            border-radius: 8px;
+            color: var(--white);
+            font-family: inherit;
         }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--secondary-color);
-        }
-
-        .form-control::placeholder {
-            color: rgba(255,255,255,0.5);
-        }
+        .input-field:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.15); }
+        ::placeholder { color: rgba(255,255,255,0.6); }
 
         /* ========================
-        Footer
-        ========================
-        */
+           Footer
+           ======================== */
         footer {
-            background-color: #112a24;
-            padding: 30px 0;
-            text-align: center;
-            color: rgba(255,255,255,0.6);
+            background: #0b1a17;
+            color: rgba(255,255,255,0.7);
+            padding: 50px 0 20px;
             font-size: 0.9rem;
         }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            display: inline-block;
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+        .social-icons a:hover { color: var(--gold); transform: translateY(-3px); display: inline-block;}
 
         /* ========================
-        Responsive Media Queries
-        ========================
-        */
+           Mobile Responsive
+           ======================== */
+        @media (max-width: 992px) {
+            .nav-links { display: none; } /* Hide desktop menu */
+            .menu-toggle { display: block; } /* Show hamburger */
+            
+            .hero h1 { font-size: 2.8rem; }
+            .about-wrapper { grid-template-columns: 1fr; }
+            .about-img { order: -1; height: 300px; }
+            
+            /* Navbar adjustments for mobile */
+            .logo { font-size: 1.4rem; }
+            .lang-btn { display: none; } /* Move to mobile menu */
+        }
+
         @media (max-width: 768px) {
-            .nav-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                right: -100%; /* Start off-screen */
-                width: 80%;
-                height: 100vh;
-                background-color: var(--primary-color);
-                flex-direction: column;
-                justify-content: center;
-                transition: var(--transition);
-                padding: 50px;
-            }
+            .section-padding { padding: 60px 0; }
             
-            html[dir="rtl"] .nav-menu {
-                right: auto;
-                left: -100%;
-            }
-
-            .nav-menu.active {
-                right: 0;
-            }
-            html[dir="rtl"] .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-item {
-                margin: 20px 0;
-            }
-
-            .lang-switch {
-                margin: 20px 0 0 0;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
+            .section-header h2 { font-size: 2rem; }
             
-            .about-image {
-                order: -1; /* Image on top on mobile */
-                margin-bottom: 30px;
-            }
+            /* Mobile Contact stack */
+            .contact-wrapper { flex-direction: column; }
+            .contact-form-box { width: 100%; padding: 25px; }
+            
+            .footer-top { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <header id="header">
-        <div class="container nav-container">
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-inner">
             <a href="#" class="logo">
-                <i class="fa-solid fa-house-chimney-user"></i>
-                <span data-i18n="siteTitle">منزل Homes</span>
+                <i class="fa-solid fa-gem text-gold"></i>
+                <span data-i18n="siteTitle">MANZIL</span>
             </a>
-            <div class="nav-toggle" id="navToggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="#hero" class="nav-link" data-i18n="navHome">الرئيسية</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link" data-i18n="navAbout">عن منزل</a></li>
-                <li class="nav-item"><a href="#portfolio" class="nav-link" data-i18n="navPortfolio">المحفظة العقارية</a></li>
-                <li class="nav-item"><a href="#insights" class="nav-link" data-i18n="navInsights">رؤى وخبرات</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link" data-i18n="navContact">اتصل بنا</a></li>
-                <button class="lang-switch" id="langToggle">English</button>
+            
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-link" data-i18n="navHome">الرئيسية</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="navAbout">عن منزل</a></li>
+                <li><a href="#portfolio" class="nav-link" data-i18n="navPortfolio">المحفظة</a></li>
+                <li><a href="#services" class="nav-link" data-i18n="navServices">خدماتنا</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="navContact">اتصل بنا</a></li>
+                <button class="lang-btn" id="langToggleDesk">English</button>
             </ul>
+
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
         </div>
+    </nav>
+
+    <!-- Full Screen Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenu">
+        <!-- Close Button inside menu -->
+        <div class="menu-toggle" id="closeMenu" style="position: absolute; top: 30px; right: 30px; display: block;">
+            <i class="fa-solid fa-xmark fa-lg"></i>
+        </div>
+        
+        <ul>
+            <li><a href="#hero" class="mobile-link" data-i18n="navHome">الرئيسية</a></li>
+            <li><a href="#about" class="mobile-link" data-i18n="navAbout">عن منزل</a></li>
+            <li><a href="#portfolio" class="mobile-link" data-i18n="navPortfolio">المحفظة العقارية</a></li>
+            <li><a href="#services" class="mobile-link" data-i18n="navServices">خدماتنا</a></li>
+            <li><a href="#contact" class="mobile-link" data-i18n="navContact">اتصل بنا</a></li>
+            <li><button class="btn-outline btn" id="langToggleMob" style="margin-top: 20px;">English</button></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero">
+        <div class="hero-content reveal active">
+            <span class="sub-title" style="color: var(--gold-light);">EST. 2023</span>
+            <h1 data-i18n="heroTitle">إعادة تعريف الرفاهية</h1>
+            <p data-i18n="heroSubtitle">اكتشف منازل الأحلام في أرقى المواقع حول العالم. تصميمات عصرية، راحة مطلقة، وحياة لا تُنسى.</p>
+            <a href="#portfolio" class="btn" data-i18n="heroBtn">استكشف المجموعة</a>
+        </div>
+        <a href="#about" class="scroll-down">
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
     </header>
 
-    <section id="hero">
-        <div class="container hero-content">
-            <h1 data-i18n="heroTitle">إعادة تعريف الرفاهية</h1>
-            <p data-i18n="heroSubtitle">اكتشف مجموعة حصرية من العقارات الفاخرة التي تجمع بين الأناقة العصرية والراحة المطلقة في أرقى الوجهات العالمية.</p>
-            <a href="#portfolio" class="btn btn-gold" data-i18n="heroBtn">استكشف عقاراتنا</a>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <h3>250+</h3>
+                    <p data-i18n="stat1">عقار فاخر</p>
+                </div>
+                <div class="stat-item reveal">
+                    <h3>15</h3>
+                    <p data-i18n="stat2">مدينة عالمية</p>
+                </div>
+                <div class="stat-item reveal">
+                    <h3>1200+</h3>
+                    <p data-i18n="stat3">عميل سعيد</p>
+                </div>
+                <div class="stat-item reveal">
+                    <h3>10</h3>
+                    <p data-i18n="stat4">سنوات خبرة</p>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="section-padding">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <div class="section-header" style="text-align: inherit; margin-bottom: 30px;">
-                        <h2 data-i18n="aboutTitle">فلسفة الرفاهية لدينا</h2>
-                    </div>
-                    <p data-i18n="aboutText1">في "منزل Homes"، نؤمن بأن المسكن ليس مجرد مكان للعيش، بل هو تعبير عن أسلوب حياة. نحن نتجاوز المألوف لنقدم لعملائنا المميزين تجربة عقارية لا تضاهى، ترتكز على الجودة الفائقة، التصميم المبتكر، والمواقع الاستثنائية.</p>
-                    <p data-i18n="aboutText2">خبرتنا العالمية تمكننا من انتقاء الفرص العقارية الأكثر تميزاً، سواء كنت تبحث عن منزل أحلامك أو فرصة استثمارية واعدة. نحن شركاؤك في رحلة البحث عن التميز.</p>
-                    <a href="#contact" class="btn" data-i18n="aboutBtn">تواصل مع مستشارينا</a>
+            <div class="about-wrapper">
+                <div class="about-text reveal">
+                    <span class="sub-title" data-i18n="aboutSub">فلسفتنا</span>
+                    <h2 data-i18n="aboutTitle">التميز في كل زاوية</h2>
+                    <p style="margin-bottom: 20px; color: #666;" data-i18n="aboutText1">
+                        نحن في "منزل" لا نبيع العقارات فحسب، بل نصنع أنماط حياة. نحن ندرك أن المنزل هو المكان الذي تبدأ فيه القصص وتنتهي فيه، لذلك نحرص على انتقاء كل عقار بعناية فائقة.
+                    </p>
+                    <p style="margin-bottom: 30px; color: #666;" data-i18n="aboutText2">
+                        فريقنا من الخبراء العالميين مكرس لتقديم تجربة سلسة، شفافة، وفاخرة من اللحظة الأولى للتواصل وحتى استلام المفاتيح.
+                    </p>
+                    <a href="#contact" class="btn btn-outline" style="color: var(--primary); border-color: var(--primary);" data-i18n="aboutBtn">تعرف علينا أكثر</a>
                 </div>
-                <div class="about-image">
-                    <img src="https://i.ibb.co/QF2dvZhd/avana-on-main.avif" alt="Avana on Main - Luxury Building">
+                <div class="about-img reveal">
+                    <img src="https://i.ibb.co/QF2dvZhd/avana-on-main.avif" alt="Luxury Architecture">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="portfolio" class="section-padding">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section-padding" style="background: var(--off-white);">
         <div class="container">
-            <div class="section-header">
-                <h2 data-i18n="portfolioTitle">محفظتنا الحصرية</h2>
-                <p data-i18n="portfolioSubtitle">جولة في أرقى العقارات والوجهات التي نفخر بتقديمها.</p>
+            <div class="section-header text-center reveal">
+                <span class="sub-title" data-i18n="portfolioSub">مجموعة حصرية</span>
+                <h2 data-i18n="portfolioTitle">عقارات مميزة</h2>
             </div>
+            
             <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <img src="https://i.ibb.co/zVw018vg/ashton-austin.avif" alt="Ashton Austin">
-                    <div class="portfolio-overlay">
+                <!-- Item 1 -->
+                <div class="property-card reveal">
+                    <div class="card-img-holder">
+                        <span class="price-tag">$2,500,000</span>
+                        <img src="https://i.ibb.co/zVw018vg/ashton-austin.avif" alt="Villa">
+                    </div>
+                    <div class="card-details">
                         <h3>Ashton Austin</h3>
-                        <p data-i18n="locAustin">أوستن، تكساس</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://i.ibb.co/mr11BPZ6/the-goodwin.avif" alt="The Goodwin">
-                    <div class="portfolio-overlay">
-                        <h3>The Goodwin</h3>
-                        <p data-i18n="locGeneric">إقامة فاخرة</p>
-                    </div>
-                </div>
-                 <div class="portfolio-item">
-                    <img src="https://i.ibb.co/MkRNnQF3/los-angeles.avif" alt="Los Angeles">
-                    <div class="portfolio-overlay">
-                        <h3 data-i18n="cityLA">لوس أنجلوس</h3>
-                        <p data-i18n="cityLASub">كاليفورنيا</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://i.ibb.co/Jj4FbKC4/atlanta.avif" alt="Atlanta">
-                    <div class="portfolio-overlay">
-                        <h3 data-i18n="cityAtlanta">أتلانتا</h3>
-                        <p data-i18n="cityAtlantaSub">جورجيا</p>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <img src="https://i.ibb.co/qLXMZS0j/greater-houston.avif" alt="Greater Houston">
-                    <div class="portfolio-overlay">
-                        <h3 data-i18n="cityHouston">هيوستن الكبرى</h3>
-                        <p data-i18n="cityHoustonSub">تكساس</p>
-                    </div>
-                </div>
-                 <div class="portfolio-item">
-                     <img src="https://i.ibb.co/QF2dvZhd/avana-on-main.avif" alt="Avana on Main">
-                    <div class="portfolio-overlay">
-                        <h3>Avana on Main</h3>
-                        <p data-i18n="locGeneric">إقامة فاخرة</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="insights" class="section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h2 data-i18n="insightsTitle">رؤى الخبراء</h2>
-                <p data-i18n="insightsSubtitle">نصائح وإرشادات قيمة لمساعدتك في اتخاذ قرارات عقارية حكيمة.</p>
-            </div>
-            <div class="insights-grid">
-                <div class="insight-card">
-                    <div class="insight-img">
-                        <img src="https://i.ibb.co/33gQ2ym/image.avif" alt="متى تبدأ البحث">
-                    </div>
-                    <div class="insight-content">
-                        <h3 data-i18n="blog1Title">متى تبدأ رحلة البحث عن منزلك؟</h3>
-                        <p data-i18n="blog1Text">التوقيت هو كل شيء في سوق العقارات. تعرف على أفضل الأوقات لبدء البحث لضمان حصولك على أفضل الخيارات والأسعار.</p>
-                        <a href="#" class="read-more">
-                            <span data-i18n="readMore">اقرأ المزيد</span>
-                            <i class="fa-solid fa-arrow-right-long"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="insight-card">
-                    <div class="insight-img">
-                        <img src="https://i.ibb.co/Df6JZ76c/image.avif" alt="كيفية حجز جولة">
-                    </div>
-                    <div class="insight-content">
-                        <h3 data-i18n="blog2Title">كيفية حجز جولة عقارية ناجحة</h3>
-                        <p data-i18n="blog2Text">الجولة الواقعية هي الخطوة الأهم. إليك قائمة مرجعية لضمان تحقيق أقصى استفادة من زياراتك للعقارات المحتملة.</p>
-                        <a href="#" class="read-more">
-                            <span data-i18n="readMore">اقرأ المزيد</span>
-                            <i class="fa-solid fa-arrow-right-long"></i>
-                        </a>
-                    </div>
-                </div>
-                 <div class="insight-card">
-                    <div class="insight-img">
-                        <img src="https://i.ibb.co/7M3yyQn/image.avif" alt="تجنب عمليات الاحتيال في الإيجار">
-                    </div>
-                    <div class="insight-content">
-                        <h3 data-i18n="blog3Title">تجنب عمليات الاحتيال في الإيجار والشراء</h3>
-                        <p data-i18n="blog3Text">حماية استثمارك هي أولويتنا. تعلم كيفية اكتشاف العلامات الحمراء وتجنب عمليات الاحتيال العقاري الشائعة.</p>
-                        <a href="#" class="read-more">
-                            <span data-i18n="readMore">اقرأ المزيد</span>
-                            <i class="fa-solid fa-arrow-right-long"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section-padding">
-        <div class="container">
-            <div class="section-header contact-header">
-                <h2 data-i18n="contactTitle">ابدأ رحلتك معنا</h2>
-                <p data-i18n="contactSubtitle">نحن هنا للإجابة على استفساراتك ومساعدتك في العثور على العقار المثالي.</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <h4 data-i18n="addressTitle">العنوان</h4>
-                            <p data-i18n="addressText">برج الرفاهية، الطابق 35، دبي، الإمارات العربية المتحدة</p>
+                        <div class="location"><i class="fa-solid fa-location-dot"></i> Texas, USA</div>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="fa-solid fa-bed"></i> 5</span>
+                            <span class="meta-item"><i class="fa-solid fa-bath"></i> 4</span>
+                            <span class="meta-item"><i class="fa-solid fa-ruler-combined"></i> 450 m²</span>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="property-card reveal">
+                    <div class="card-img-holder">
+                        <span class="price-tag">$3,100,000</span>
+                        <img src="https://i.ibb.co/MkRNnQF3/los-angeles.avif" alt="LA House">
+                    </div>
+                    <div class="card-details">
+                        <h3 data-i18n="cityLA">لوس أنجلوس</h3>
+                        <div class="location"><i class="fa-solid fa-location-dot"></i> California</div>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="fa-solid fa-bed"></i> 6</span>
+                            <span class="meta-item"><i class="fa-solid fa-bath"></i> 5</span>
+                            <span class="meta-item"><i class="fa-solid fa-ruler-combined"></i> 600 m²</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="property-card reveal">
+                    <div class="card-img-holder">
+                        <span class="price-tag">$1,800,000</span>
+                        <img src="https://i.ibb.co/Jj4FbKC4/atlanta.avif" alt="Atlanta">
+                    </div>
+                    <div class="card-details">
+                        <h3 data-i18n="cityAtlanta">أتلانتا فيو</h3>
+                        <div class="location"><i class="fa-solid fa-location-dot"></i> Georgia</div>
+                        <div class="card-meta">
+                            <span class="meta-item"><i class="fa-solid fa-bed"></i> 4</span>
+                            <span class="meta-item"><i class="fa-solid fa-bath"></i> 3</span>
+                            <span class="meta-item"><i class="fa-solid fa-ruler-combined"></i> 320 m²</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 50px;">
+                <a href="#" class="btn" data-i18n="viewAllBtn">عرض كل العقارات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Why Us -->
+    <section id="services" class="section-padding services-bg">
+        <div class="container">
+            <div class="section-header text-center reveal">
+                <span class="sub-title" data-i18n="servicesSub">لماذا تختارنا</span>
+                <h2 data-i18n="servicesTitle">خدمات تتجاوز التوقعات</h2>
+            </div>
+            
+            <div class="portfolio-grid"> <!-- Reusing grid class -->
+                <div class="service-card reveal">
+                    <div class="icon-box"><i class="fa-solid fa-handshake"></i></div>
+                    <h3 data-i18n="serv1Title">استشارات موثوقة</h3>
+                    <p style="color: #777; font-size: 0.9rem;" data-i18n="serv1Text">فريقنا يقدم لك النصيحة الأمينة والمبنية على بيانات السوق الدقيقة.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="icon-box"><i class="fa-solid fa-file-contract"></i></div>
+                    <h3 data-i18n="serv2Title">إدارة قانونية</h3>
+                    <p style="color: #777; font-size: 0.9rem;" data-i18n="serv2Text">نتكفل بجميع الإجراءات القانونية والورقية لضمان راحتك.</p>
+                </div>
+                <div class="service-card reveal">
+                    <div class="icon-box"><i class="fa-solid fa-gem"></i></div>
+                    <h3 data-i18n="serv3Title">عقارات حصرية</h3>
+                    <p style="color: #777; font-size: 0.9rem;" data-i18n="serv3Text">وصول خاص لفرص استثمارية وعقارات غير معروضة في السوق العام.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-content reveal">
+                    <span class="sub-title" style="color: var(--gold);">تواصل معنا</span>
+                    <h2 style="color: var(--white); margin-bottom: 30px;" data-i18n="contactTitle">نحن هنا لخدمتك</h2>
+                    <p style="margin-bottom: 40px; opacity: 0.8;" data-i18n="contactDesc">هل لديك استفسار أو ترغب في حجز جولة؟ فريقنا جاهز للرد على مدار الساعة.</p>
+                    
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
                         <div>
-                            <h4 data-i18n="phoneTitle">الهاتف</h4>
+                            <h4 style="color: var(--gold);" data-i18n="phoneTitle">الهاتف</h4>
                             <p dir="ltr">+971 4 123 4567</p>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <i class="fa-solid fa-envelope"></i>
+                    
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
                         <div>
-                            <h4 data-i18n="emailTitle">البريد الإلكتروني</h4>
-                            <p>info@manzilhomes.luxury</p>
+                            <h4 style="color: var(--gold);" data-i18n="emailTitle">البريد الإلكتروني</h4>
+                            <p>vip@manzilhomes.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-icon"><i class="fa-solid fa-location-arrow"></i></div>
+                        <div>
+                            <h4 style="color: var(--gold);" data-i18n="addressTitle">المقر الرئيسي</h4>
+                            <p data-i18n="addressText">برج الرفاهية، دبي</p>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
+
+                <div class="contact-form-box reveal">
                     <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" data-i18n-placeholder="phName" placeholder="الاسم الكامل">
+                        <div class="input-group">
+                            <input type="text" class="input-field" data-i18n-placeholder="phName" placeholder="الاسم الكامل">
                         </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" data-i18n-placeholder="phEmail" placeholder="البريد الإلكتروني">
+                        <div class="input-group">
+                            <input type="email" class="input-field" data-i18n-placeholder="phEmail" placeholder="البريد الإلكتروني">
                         </div>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="5" data-i18n-placeholder="phMessage" placeholder="رسالتك"></textarea>
+                        <div class="input-group">
+                            <input type="tel" class="input-field" data-i18n-placeholder="phPhone" placeholder="رقم الهاتف">
                         </div>
-                        <button type="submit" class="btn btn-gold" style="width: 100%;" data-i18n="contactBtn">إرسال الرسالة</button>
+                        <div class="input-group">
+                            <textarea class="input-field" rows="4" data-i18n-placeholder="phMessage" placeholder="كيف يمكننا مساعدتك؟"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold" style="width: 100%; border: none; cursor: pointer;" data-i18n="contactBtn">إرسال الطلب</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <a href="#" class="footer-logo">
-                <i class="fa-solid fa-house-chimney-user"></i>
-                <span data-i18n="siteTitle">منزل Homes</span>
-            </a>
-            <p>&copy; 2023 <span data-i18n="siteTitle">منزل Homes</span>. <span data-i18n="copyright">جميع الحقوق محفوظة.</span></p>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2 style="color: var(--white); margin-bottom: 10px;">MANZIL</h2>
+                    <p style="font-size: 0.85rem; max-width: 300px;" data-i18n="footerDesc">الخيار الأول للنخبة الباحثين عن التميز والرفاهية العقارية.</p>
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="text-center" style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
+                <p>&copy; 2024 Manzil Homes. <span data-i18n="copyright">جميع الحقوق محفوظة.</span></p>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
-        // بيانات الترجمة (قاموس)
+        // === 1. Navbar Scroll Effect ===
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // === 2. Mobile Menu Logic (Improved) ===
+        const menuToggle = document.getElementById('menuToggle');
+        const closeMenu = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        
+        function openMenu() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling background
+        }
+
+        function closeMenuFunc() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        menuToggle.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFunc);
+
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenuFunc);
+        });
+
+        // === 3. Scroll Reveal Animation ===
+        const revealElements = document.querySelectorAll('.reveal');
+
+        function checkReveal() {
+            const triggerBottom = window.innerHeight * 0.85; // Trigger a bit earlier
+            
+            revealElements.forEach(el => {
+                const elTop = el.getBoundingClientRect().top;
+                if (elTop < triggerBottom) {
+                    el.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('load', checkReveal); // Run on load
+
+        // === 4. Language Translation ===
         const translations = {
             ar: {
-                siteTitle: "منزل Homes",
+                siteTitle: "منزل",
                 navHome: "الرئيسية",
                 navAbout: "عن منزل",
-                navPortfolio: "المحفظة العقارية",
-                navInsights: "رؤى وخبرات",
+                navPortfolio: "المحفظة",
+                navServices: "خدماتنا",
                 navContact: "اتصل بنا",
-                langBtn: "English",
                 heroTitle: "إعادة تعريف الرفاهية",
-                heroSubtitle: "اكتشف مجموعة حصرية من العقارات الفاخرة التي تجمع بين الأناقة العصرية والراحة المطلقة في أرقى الوجهات العالمية.",
-                heroBtn: "استكشف عقاراتنا",
-                aboutTitle: "فلسفة الرفاهية لدينا",
-                aboutText1: "في \"منزل Homes\"، نؤمن بأن المسكن ليس مجرد مكان للعيش، بل هو تعبير عن أسلوب حياة. نحن نتجاوز المألوف لنقدم لعملائنا المميزين تجربة عقارية لا تضاهى، ترتكز على الجودة الفائقة، التصميم المبتكر، والمواقع الاستثنائية.",
-                aboutText2: "خبرتنا العالمية تمكننا من انتقاء الفرص العقارية الأكثر تميزاً، سواء كنت تبحث عن منزل أحلامك أو فرصة استثمارية واعدة. نحن شركاؤك في رحلة البحث عن التميز.",
-                aboutBtn: "تواصل مع مستشارينا",
-                portfolioTitle: "محفظتنا الحصرية",
-                portfolioSubtitle: "جولة في أرقى العقارات والوجهات التي نفخر بتقديمها.",
-                locAustin: "أوستن، تكساس",
-                locGeneric: "إقامة فاخرة",
-                cityLA: "لوس أنجلوس",
-                cityLASub: "كاليفورنيا",
-                cityAtlanta: "أتلانتا",
-                cityAtlantaSub: "جورجيا",
-                cityHouston: "هيوستن الكبرى",
-                cityHoustonSub: "تكساس",
-                insightsTitle: "رؤى الخبراء",
-                insightsSubtitle: "نصائح وإرشادات قيمة لمساعدتك في اتخاذ قرارات عقارية حكيمة.",
-                blog1Title: "متى تبدأ رحلة البحث عن منزلك؟",
-                blog1Text: "التوقيت هو كل شيء في سوق العقارات. تعرف على أفضل الأوقات لبدء البحث لضمان حصولك على أفضل الخيارات والأسعار.",
-                blog2Title: "كيفية حجز جولة عقارية ناجحة",
-                blog2Text: "الجولة الواقعية هي الخطوة الأهم. إليك قائمة مرجعية لضمان تحقيق أقصى استفادة من زياراتك للعقارات المحتملة.",
-                blog3Title: "تجنب عمليات الاحتيال في الإيجار والشراء",
-                blog3Text: "حماية استثمارك هي أولويتنا. تعلم كيفية اكتشاف العلامات الحمراء وتجنب عمليات الاحتيال العقاري الشائعة.",
-                readMore: "اقرأ المزيد",
-                contactTitle: "ابدأ رحلتك معنا",
-                contactSubtitle: "نحن هنا للإجابة على استفساراتك ومساعدتك في العثور على العقار المثالي.",
-                addressTitle: "العنوان",
-                addressText: "برج الرفاهية، الطابق 35، دبي، الإمارات العربية المتحدة",
-                phoneTitle: "الهاتف",
-                emailTitle: "البريد الإلكتروني",
-                phName: "الاسم الكامل",
-                phEmail: "البريد الإلكتروني",
-                phMessage: "رسالتك",
-                contactBtn: "إرسال الرسالة",
-                copyright: "جميع الحقوق محفوظة."
+                heroSubtitle: "اكتشف منازل الأحلام في أرقى المواقع حول العالم.",
+                heroBtn: "استكشف المجموعة",
+                stat1: "عقار فاخر", stat2: "مدينة عالمية", stat3: "عميل سعيد", stat4: "سنوات خبرة",
+                aboutSub: "فلسفتنا", aboutTitle: "التميز في كل زاوية",
+                aboutText1: "نحن في \"منزل\" لا نبيع العقارات فحسب، بل نصنع أنماط حياة.",
+                aboutText2: "فريقنا من الخبراء العالميين مكرس لتقديم تجربة سلسة.",
+                aboutBtn: "تعرف علينا أكثر",
+                portfolioSub: "مجموعة حصرية", portfolioTitle: "عقارات مميزة",
+                cityLA: "لوس أنجلوس", cityAtlanta: "أتلانتا فيو",
+                viewAllBtn: "عرض كل العقارات",
+                servicesSub: "لماذا تختارنا", servicesTitle: "خدمات تتجاوز التوقعات",
+                serv1Title: "استشارات موثوقة", serv1Text: "نصيحة أمينة مبنية على بيانات.",
+                serv2Title: "إدارة قانونية", serv2Text: "نتكفل بجميع الإجراءات.",
+                serv3Title: "عقارات حصرية", serv3Text: "وصول خاص لفرص نادرة.",
+                contactTitle: "نحن هنا لخدمتك", contactDesc: "فريقنا جاهز للرد على مدار الساعة.",
+                phoneTitle: "الهاتف", emailTitle: "البريد", addressTitle: "العنوان",
+                phName: "الاسم الكامل", phEmail: "البريد الإلكتروني", phPhone: "رقم الهاتف", phMessage: "رسالتك",
+                contactBtn: "إرسال الطلب",
+                footerDesc: "الخيار الأول للنخبة.", copyright: "جميع الحقوق محفوظة."
             },
             en: {
-                siteTitle: "Manzil Homes",
+                siteTitle: "MANZIL",
                 navHome: "Home",
-                navAbout: "About Us",
+                navAbout: "About",
                 navPortfolio: "Portfolio",
-                navInsights: "Insights",
+                navServices: "Services",
                 navContact: "Contact",
-                langBtn: "العربية",
-                heroTitle: "Redefining Luxury Living",
-                heroSubtitle: "Discover an exclusive collection of luxury properties blending modern elegance with absolute comfort in the world's finest destinations.",
-                heroBtn: "Explore Our Properties",
-                aboutTitle: "Our Philosophy of Luxury",
-                aboutText1: "At Manzil Homes, we believe a residence is not just a place to live, but an expression of lifestyle. We go beyond the ordinary to offer our discerning clients an unparalleled real estate experience, rooted in superior quality, innovative design, and exceptional locations.",
-                aboutText2: "Our global expertise enables us to curate the most distinguished real estate opportunities, whether you are seeking your dream home or a promising investment. We are your partners in the pursuit of excellence.",
-                aboutBtn: "Contact Our Advisors",
-                portfolioTitle: "Our Exclusive Portfolio",
-                portfolioSubtitle: "A tour of the finest properties and destinations we are proud to present.",
-                locAustin: "Austin, Texas",
-                locGeneric: "Luxury Residence",
-                cityLA: "Los Angeles",
-                cityLASub: "California",
-                cityAtlanta: "Atlanta",
-                cityAtlantaSub: "Georgia",
-                cityHouston: "Greater Houston",
-                cityHoustonSub: "Texas",
-                insightsTitle: "Expert Insights",
-                insightsSubtitle: "Valuable tips and guidance to help you make wise real estate decisions.",
-                blog1Title: "When to Start Your Home Search?",
-                blog1Text: "Timing is everything in real estate. Learn the best times to start searching to ensure you get the best options and pricing.",
-                blog2Title: "How to Book a Successful Property Tour",
-                blog2Text: "The physical tour is the most crucial step. Here is a checklist to ensure you get the most out of your potential property visits.",
-                blog3Title: "Avoiding Rental & Buying Fraud",
-                blog3Text: "Protecting your investment is our priority. Learn how to spot red flags and avoid common real estate scams.",
-                readMore: "Read More",
-                contactTitle: "Begin Your Journey With Us",
-                contactSubtitle: "We are here to answer your inquiries and help you find the perfect property.",
-                addressTitle: "Address",
-                addressText: "Luxury Tower, 35th Floor, Dubai, UAE",
-                phoneTitle: "Phone",
-                emailTitle: "Email",
-                phName: "Full Name",
-                phEmail: "Email Address",
-                phMessage: "Your Message",
-                contactBtn: "Send Message",
-                copyright: "All Rights Reserved."
+                heroTitle: "Redefining Luxury",
+                heroSubtitle: "Discover dream homes in the world's most prestigious locations.",
+                heroBtn: "Explore Collection",
+                stat1: "Luxury Listings", stat2: "Global Cities", stat3: "Happy Clients", stat4: "Years Exp.",
+                aboutSub: "Our Philosophy", aboutTitle: "Excellence in Every Corner",
+                aboutText1: "At Manzil, we don't just sell real estate; we craft lifestyles.",
+                aboutText2: "Our team of global experts is dedicated to seamless experiences.",
+                aboutBtn: "Learn More",
+                portfolioSub: "Exclusive Collection", portfolioTitle: "Featured Properties",
+                cityLA: "Los Angeles", cityAtlanta: "Atlanta View",
+                viewAllBtn: "View All Properties",
+                servicesSub: "Why Choose Us", servicesTitle: "Services Beyond Expectations",
+                serv1Title: "Trusted Advice", serv1Text: "Honest advice based on data.",
+                serv2Title: "Legal Mgmt", serv2Text: "We handle all procedures.",
+                serv3Title: "Exclusive Access", serv3Text: "Access to off-market gems.",
+                contactTitle: "Here to Serve You", contactDesc: "Our team is ready 24/7.",
+                phoneTitle: "Phone", emailTitle: "Email", addressTitle: "Address",
+                phName: "Full Name", phEmail: "Email Address", phPhone: "Phone Number", phMessage: "Your Message",
+                contactBtn: "Send Request",
+                footerDesc: "The premier choice for the elite.", copyright: "All Rights Reserved."
             }
         };
 
-        // متغيرات اللغة
-        let currentLang = localStorage.getItem('lang') || 'ar'; // الافتراضي عربي
-        const langToggleBtn = document.getElementById('langToggle');
-        const htmlEl = document.documentElement;
+        const langBtns = [document.getElementById('langToggleDesk'), document.getElementById('langToggleMob')];
+        let currentLang = 'ar';
 
-        // دالة تحديث النصوص والاتجاه
-        function updateLanguage(lang) {
-            htmlEl.setAttribute('lang', lang);
-            htmlEl.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+        function updateLang(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
             currentLang = lang;
-            localStorage.setItem('lang', lang);
-
-            // تحديث زر التبديل
-            langToggleBtn.textContent = translations[lang].langBtn;
-
-            // تحديث جميع العناصر التي تحتوي على data-i18n
+            
+            // Text Update
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    el.textContent = translations[lang][key];
-                }
+                if (translations[lang][key]) el.textContent = translations[lang][key];
             });
 
-            // تحديث الـ placeholders للنماذج
+            // Placeholder Update
             document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
                 const key = el.getAttribute('data-i18n-placeholder');
-                if (translations[lang][key]) {
-                    el.setAttribute('placeholder', translations[lang][key]);
-                }
+                if (translations[lang][key]) el.placeholder = translations[lang][key];
             });
-             // تحديث أيقونات الأسهم عند تغيير اللغة
-             const arrows = document.querySelectorAll('.read-more i');
-             arrows.forEach(arrow => {
-                 if (lang === 'ar') {
-                     arrow.classList.remove('fa-arrow-right-long');
-                     arrow.classList.add('fa-arrow-left-long');
-                 } else {
-                     arrow.classList.remove('fa-arrow-left-long');
-                     arrow.classList.add('fa-arrow-right-long');
-                 }
-             });
+
+            // Button Text Update
+            langBtns.forEach(btn => btn.textContent = lang === 'ar' ? 'English' : 'العربية');
         }
 
-        // تشغيل الدالة عند التحميل
-        updateLanguage(currentLang);
-
-        // حدث النقر على زر تبديل اللغة
-        langToggleBtn.addEventListener('click', () => {
-            const newLang = currentLang === 'ar' ? 'en' : 'ar';
-            updateLanguage(newLang);
-        });
-
-        // Header Scroll Effect (تأثير شريط التنقل عند التمرير)
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile Navigation Toggle (قائمة الموبايل)
-        const navToggle = document.getElementById('navToggle');
-        const navMenu = document.getElementById('navMenu');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            // تغيير أيقونة القائمة
-            navToggle.querySelector('i').classList.toggle('fa-bars');
-            navToggle.querySelector('i').classList.toggle('fa-xmark');
-        });
-
-        // إغلاق القائمة عند النقر على أي رابط
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    navToggle.querySelector('i').classList.remove('fa-xmark');
-                    navToggle.querySelector('i').classList.add('fa-bars');
-                }
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const newLang = currentLang === 'ar' ? 'en' : 'ar';
+                updateLang(newLang);
+                if(mobileMenu.classList.contains('active')) closeMenuFunc(); // Close menu after switch
             });
         });
 
